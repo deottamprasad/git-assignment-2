@@ -1,0 +1,11 @@
+Using git reset to Unstage
+We can use git reset to unstage changes.
+
+$ git reset myFile.txt
+this makes sure the file is NOT included in our next commit. The local changes themselves are not affected by this command.
+
+Unstaging All Files at Once
+Sometimes, we might want to unstage all of the files we had already added to the Staging Area. In such a situation, we can use git reset without further options:
+
+$ git reset
+The Staging Area will be emptied (but our local changes themselves are left untouched).

@@ -1,0 +1,11 @@
+1) git push --force-with-lease
+   This command will not let us push if there is extra commit on remote branch.
+   It allows us to push the commits only if there is a rebase in the commits in the local repository ie if multiple commits are merged or something similar in the       local repository.
+
+2) git push --force 
+   This command will still push if there is extra commit on remote branch. It is very dangerous and should be avoided at all.
+
+when --force-with-lease is used?
+--force-with-lease is basically used when the commits in the local repository are rebased.Using this flag, git checks if the remote version of the branch is the same as the one we rebase, i.e. did someone push new commits when we were rebasing. The push is then rejected if the remotes branch is changed.
+
+It’s like taking a lease on the version of the branch we started changing. And then when pushing, it checks the version we started from and applies the changes only if the version it remembers matches the one currently on the remote. So, we won’t accidentally overwrite a commit we’re not aware of.

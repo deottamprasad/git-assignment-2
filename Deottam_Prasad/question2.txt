@@ -1,0 +1,18 @@
+Steps to set multiple remote repositories for the same project :
+Suppose we have two github repositories git-repo1 and git-repo2.
+Step 1. First clone our project from one of these repositories lets say repo1.
+ git clone git@github.com:my-company/git-repo1
+Step 2. Now we will manually edit Git repository‘s configuration file where we will add the second repository as a new remote source.
+	- Open .git/config file.
+	- copy the whole content of config file and paste it at the end in the same file.
+	- Do the appropriate changes like change the name of remote to repo2 and also add the appropriate github repo url. 
+Step 3. Now we can pull from and push to both git repositories like this:
+	git push repo1 master
+	git pull repo1 master
+	
+	git push repo2 master
+	git pull repo2 master
+Use case :
+We may need to use multiple Git repositories where the codebase is too big and hence cannot be maintained from one single repository. When we say big, it can reach a size of petabytes! That’s why it is necessary to use multiple Git repositories.
+
+Another big benefit that comes with using multiple repositories is that it can make teamwork efficient without the need to depend on each other. This means that they can work independently and work faster than ever.

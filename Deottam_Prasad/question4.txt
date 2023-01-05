@@ -1,0 +1,18 @@
+Deleting the commit in Git must be approached in one of two ways, depending on if we have or have not pushed our changes. Please note before attempting this, running these commands will DELETE our working directory changes. Any changes to tracked files in the working tree since <commit> are discarded. Be sure to separately save any changes you'd like to have.
+ 
+ 
+ 
+If our changes have not been pushed yet simply enter the command 
+
+git reset --hard HEAD~1
+This will discard all working tree changes and move HEAD to the commit before HEAD. 
+
+If we'd like to delete the commits up until a specific commit, running <git log> into the command line to find the specific commit id and then running
+
+git reset --hard <sha1-commit-id>
+will discard all working tree changes and move HEAD to the commit chosen.
+
+
+Alternatively, if we have already pushed our changes we will need to run the following code
+
+git push origin HEAD --force 

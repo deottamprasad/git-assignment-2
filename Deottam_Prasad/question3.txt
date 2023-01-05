@@ -1,0 +1,11 @@
+Steps to merging multiple commits:
+Suppose we have 4 commits made in master branch c1, c2, c3, c4.
+Step 1. Running git rebase in interactive mode
+Suppose that we want to merge the c2 and c3 into a single commit. To do that, we should run git rebase in interactive mode (-i) providing the last commit to set the ones that come after it. Here, HEAD is the alias of the very last commit.
+
+git rebase -i HEAD~3
+Note that HEAD~3 means three commits prior to the HEAD. We can select the appropriate commit by its hash.
+Step 2. Typing “squash”
+After the first step, the editor window will show up offering us to input the command for each commit. All we need to do is replacing pick with squash, the commit c2. Then, save the file.
+Step 3. Choosing between commit messages
+One more editor window will show up to change the resulting commit message. Here, we can find all our commit messages and change them according to your exact needs.
